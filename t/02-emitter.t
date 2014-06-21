@@ -18,7 +18,7 @@ subtest 'MongoDB Backend' => sub {
     # Normal event
 
     my $Backend = Deeme::Backend::Meerkat->new(
-        database => "deeme",
+        database => "deeme_test",
         host     => "mongodb://localhost:27017",
     );
     my $e = Deeme->new( backend => $Backend );
@@ -33,13 +33,14 @@ subtest 'MongoDB Backend' => sub {
     eval { $e->emit('die') };
     is $@, "works!\n", 'right error';
 
+    $e->on( error => sub { die "$_[1]" } );
     # Unhandled error event
     eval { $e->emit( error => 'just' ) };
     like $@, qr/just/, 'right error';
 
     eval { $e->emit_safe( error => 'works' ) };
     like $@, qr/works/, 'right error';
-
+    $e->reset;
     # Exception in error event
     $e->once( error => sub { die "$_[1]entional" } );
     eval { $e->emit( error => 'int' ) };
@@ -87,6 +88,7 @@ subtest 'MongoDB Backend' => sub {
     is scalar @{ $e->subscribers('one_time') }, 1, 'one subscriber';
     eval { $e->emit('one_time'); };
     like $@, qr/OK\!/, 'event was emitted once';
+    $e->reset;
 };
 use_ok("Deeme::Backend::Meerkat::Model::Event");
 

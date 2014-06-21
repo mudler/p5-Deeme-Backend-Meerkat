@@ -14,7 +14,7 @@ Deeme::Backend::Meerkat - MongoDB Backend using Meerkat for Deeme
 
 # DESCRIPTION
 
-Deeme::Backend::Meerkat is a MongoDB Deeme memory backend using Meerkat.
+Deeme::Backend::Meerkat is a MongoDB Deeme database backend using Meerkat.
 Only database and host are strictly required.
 
 # AUTHOR

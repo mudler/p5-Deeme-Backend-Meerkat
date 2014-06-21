@@ -3,7 +3,6 @@ use Mojo::Base -strict;
 use Test::More;
 use Deeme;
 use Deeme::Backend::Meerkat;
-use_ok("Deeme::Backend::Meerkat::Model::Event");
 
 subtest 'MongoDB Backend' => sub {
 
@@ -89,5 +88,6 @@ subtest 'MongoDB Backend' => sub {
     eval { $e->emit('one_time'); };
     like $@, qr/OK\!/, 'event was emitted once';
 };
+use_ok("Deeme::Backend::Meerkat::Model::Event");
 
 done_testing();

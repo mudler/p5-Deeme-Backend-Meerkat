@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "MongoDB Backend using Meerkat for Deeme",
    "author" : [
       "mudler <mudler@dark-lab.net>"
    ],
@@ -26,7 +26,8 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.035"
+            "Module::Build::Tiny" : "0.035",
+            "perl" : "5.008005"
          }
       },
       "develop" : {
@@ -36,16 +37,33 @@
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.008005"
+            "Deeme" : "0",
+            "Deeme::Utils" : "0",
+            "Meerkat" : "0",
+            "Meerkat::Role::Document" : "0",
+            "Mojo::Base" : "0",
+            "Moose" : "0"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.88"
+            "MongoDB::Connection" : "0",
+            "Test::More" : "0"
          }
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/mudler/p5-Deeme-Backend-Meerkat/issues"
+      },
+      "homepage" : "https://github.com/mudler/p5-Deeme-Backend-Meerkat",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/mudler/p5-Deeme-Backend-Meerkat.git",
+         "web" : "https://github.com/mudler/p5-Deeme-Backend-Meerkat"
+      }
+   },
    "version" : "0.01"
 }
 

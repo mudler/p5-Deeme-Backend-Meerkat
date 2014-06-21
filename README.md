@@ -1,14 +1,21 @@
 # NAME
 
-Deeme::Backend::Meerkat - Blah blah blah
+Deeme::Backend::Meerkat - MongoDB Backend using Meerkat for Deeme
 
 # SYNOPSIS
 
     use Deeme::Backend::Meerkat;
+    my $e = Deeme->new( backend => Deeme::Backend::Meerkat->new(
+          database => "deeme",
+          host     => "mongodb://localhost:27017",
+          username=>"some",
+          password=>"password"
+      ) );
 
 # DESCRIPTION
 
-Deeme::Backend::Meerkat is
+Deeme::Backend::Meerkat is a MongoDB Deeme memory backend using Meerkat.
+Only database and host are strictly required.
 
 # AUTHOR
 

@@ -27,7 +27,7 @@
       "configure" : {
          "requires" : {
             "Module::Build::Tiny" : "0.035",
-            "perl" : "5.008005"
+            "perl" : "5.006"
          }
       },
       "develop" : {
@@ -38,11 +38,12 @@
       "runtime" : {
          "requires" : {
             "Deeme" : "0",
+            "Deeme::Obj" : "0",
             "Deeme::Utils" : "0",
             "Meerkat" : "0",
             "Meerkat::Role::Document" : "0",
-            "Mojo::Base" : "0",
-            "Moose" : "0"
+            "Moose" : "0",
+            "feature" : "0"
          }
       },
       "test" : {
@@ -64,6 +65,6 @@
          "web" : "https://github.com/mudler/p5-Deeme-Backend-Meerkat"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

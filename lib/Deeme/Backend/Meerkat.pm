@@ -4,7 +4,7 @@ use Meerkat;
 use Deeme::Utils qw(_serialize _deserialize);
 use Carp 'croak';
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 has [qw(database host username password meerkat)];
 

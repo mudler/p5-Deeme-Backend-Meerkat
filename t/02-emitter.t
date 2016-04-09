@@ -8,8 +8,8 @@ subtest 'MongoDB Backend' => sub {
 
     my $connection;
     eval {
-        use MongoDB::Connection;
-        $connection = MongoDB::Connection->new( host => 'localhost:27017' );
+        use MongoDB;
+        $connection = MongoDB->connect( 'mongodb://localhost:27017' );
     };
     if ( !$connection or $@ ) {
         plan skip_all => 'No MongoDB passwordless connection on machine';
